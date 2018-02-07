@@ -46,20 +46,23 @@ public class Main extends Application {
     public Text strongestR3;
     public Text predictedScore;
 
-    public Text avgTeleGearsText;
-    public Text avgAutoGearsText;
-    public Text avgTeleFuelText;
-    public Text avgAutoFuelText;
+    public Text avgTeleSwitchText;
+    public Text avgAutoSwitchText;
+    public Text avgTeleScaleText;
+    public Text avgAutoScaleText;
+    public Text avgVaultText;
     public Text avgClimbsText;
 
-    public int avgAutoFuelX = 400;
-    public int avgAutoFuelY = 550;
-    public int avgTeleFuelX = 510;
-    public int avgTeleFuelY = 550;
-    public int avgAutoGearsX = 630;
-    public int avgAutoGearsY = 550;
-    public int avgTeleGearsX = 745;
-    public int avgTeleGearsY = 550;
+    public int avgAutoScaleX = 400;
+    public int avgAutoScaleY = 550;
+    public int avgTeleScaleX = 510;
+    public int avgTeleScaleY = 550;
+    public int avgAutoSwitchX = 630;
+    public int avgAutoSwitchY = 550;
+    public int avgTeleSwitchX = 745;
+    public int avgTeleSwitchY = 550;
+    public int avgVaultX = 100;
+    public int avgVaultY = 100;
     public int avgClimbsX = 835;
     public int avgClimbsY = 550;
 
@@ -80,14 +83,16 @@ public class Main extends Application {
     public int r3LabelY = 500;
     public int predictedScoreLabelX = 240;
     public int predictedScoreLabelY = 500;
-    public int avgTeleFuelLabelX = 470;
-    public int avgTeleFuelLabelY = 500;
-    public int avgAutoFuelLabelX = 360;
-    public int avgAutoFuelLabelY = 500;
-    public int avgTeleGearsLabelX = 700;
-    public int avgTeleGearsLabelY = 500;
-    public int avgAutoGearsLabelX = 580;
-    public int avgAutoGearsLabelY = 500;
+    public int avgTeleScaleLabelX = 470;
+    public int avgTeleScaleLabelY = 500;
+    public int avgAutoScaleLabelX = 360;
+    public int avgAutoScaleLabelY = 500;
+    public int avgTeleSwitchLabelX = 700;
+    public int avgTeleSwitchLabelY = 500;
+    public int avgAutoSwitchLabelX = 580;
+    public int avgAutoSwitchLabelY = 500;
+    public int avgVaultLabelX = 100;
+    public int avgVaultLabelY = 100;
     public int avgClimbsLabelX = 810;
     public int avgClimbsLabelY = 500;
 
@@ -164,25 +169,29 @@ public class Main extends Application {
         predictedScore.setFill(Color.RED);
         predictedScore.setStyle("-fx-font: 16 cambria");
 
-        avgTeleFuelText = new Text (avgTeleFuelX,avgTeleFuelY, "");
-        avgTeleFuelText.setFill(Color.RED);
-        avgTeleFuelText.setStyle("-fx-font: 16 cambria");
-        avgAutoFuelText = new Text (avgAutoFuelX,avgAutoFuelY, "");
-        avgAutoFuelText.setFill(Color.RED);
-        avgAutoFuelText.setStyle("-fx-font: 16 cambria");
-        avgTeleGearsText = new Text (avgTeleGearsX,avgTeleGearsY, "");
-        avgTeleGearsText.setFill(Color.RED);
-        avgTeleGearsText.setStyle("-fx-font: 16 cambria");
-        avgAutoGearsText = new Text (avgAutoGearsX,avgAutoGearsY, "") ;
-        avgAutoGearsText.setFill(Color.RED);
-        avgAutoGearsText.setStyle("-fx-font: 16 cambria");
+        avgTeleScaleText = new Text (avgTeleScaleX,avgTeleScaleY, "");
+        avgTeleScaleText.setFill(Color.RED);
+        avgTeleScaleText.setStyle("-fx-font: 16 cambria");
+        avgAutoScaleText = new Text (avgAutoScaleX,avgAutoScaleY, "");
+        avgAutoScaleText.setFill(Color.RED);
+        avgAutoScaleText.setStyle("-fx-font: 16 cambria");
+        avgTeleSwitchText = new Text (avgTeleSwitchX,avgTeleSwitchY, "");
+        avgTeleSwitchText.setFill(Color.RED);
+        avgTeleSwitchText.setStyle("-fx-font: 16 cambria");
+        avgAutoSwitchText = new Text (avgAutoSwitchX,avgAutoSwitchY, "") ;
+        avgAutoSwitchText.setFill(Color.RED);
+        avgAutoSwitchText.setStyle("-fx-font: 16 cambria");
+        avgVaultText = new Text (avgVaultX,avgVaultY, "");
+        avgVaultText.setFill(Color.RED);
+        avgVaultText.setStyle("-fx-font: 16 cambria");
         avgClimbsText = new Text (avgClimbsX,avgClimbsY, "");
         avgClimbsText.setFill(Color.RED);
         avgClimbsText.setStyle("-fx-font: 16 cambria");
-        root.getChildren().add(avgTeleFuelText);
-        root.getChildren().add(avgAutoFuelText);
-        root.getChildren().add(avgTeleGearsText);
-        root.getChildren().add(avgAutoGearsText);
+        root.getChildren().add(avgTeleScaleText);
+        root.getChildren().add(avgAutoScaleText);
+        root.getChildren().add(avgTeleSwitchText);
+        root.getChildren().add(avgAutoSwitchText);
+        root.getChildren().add(avgVaultText);
         root.getChildren().add(avgClimbsText);
 
         Text r1Label = new Text(r1LabelX, r1LabelY, "Robot 1");
@@ -197,18 +206,21 @@ public class Main extends Application {
         Text predictedScoreLabel = new Text (predictedScoreLabelX, predictedScoreLabelY, "Predicted Score");
         predictedScoreLabel.setFill(Color.MEDIUMBLUE);
         predictedScoreLabel.setStyle("-fx-font: 16 cambria");
-        Text avgTeleFuelLabel = new Text (avgTeleFuelLabelX, avgTeleFuelLabelY, "Avg. Tele Fuel");
-        avgTeleFuelLabel.setFill(Color.MEDIUMBLUE);
-        avgTeleFuelLabel.setStyle("-fx-font: 16 cambria");
-        Text avgAutoFuelLabel = new Text (avgAutoFuelLabelX, avgAutoFuelLabelY, "Avg. Auto Fuel");
-        avgAutoFuelLabel.setFill(Color.MEDIUMBLUE);
-        avgAutoFuelLabel.setStyle("-fx-font: 16 cambria");
-        Text avgAutoGearsLabel = new Text (avgAutoGearsLabelX, avgAutoGearsLabelY, "Avg. Auto Gears");
-        avgAutoGearsLabel.setFill(Color.MEDIUMBLUE);
-        avgAutoGearsLabel.setStyle("-fx-font: 16 cambria");
-        Text avgTeleGearsLabel = new Text (avgTeleGearsLabelX, avgTeleGearsLabelY, "Avg. Tele Gears");
-        avgTeleGearsLabel.setFill(Color.MEDIUMBLUE);
-        avgTeleGearsLabel.setStyle("-fx-font: 16 cambria");
+        Text avgTeleScaleLabel = new Text (avgTeleScaleLabelX, avgTeleScaleLabelY, "Avg. Tele Scale");
+        avgTeleScaleLabel.setFill(Color.MEDIUMBLUE);
+        avgTeleScaleLabel.setStyle("-fx-font: 16 cambria");
+        Text avgAutoScaleLabel = new Text (avgAutoScaleLabelX, avgAutoScaleLabelY, "Avg. Auto Scale");
+        avgAutoScaleLabel.setFill(Color.MEDIUMBLUE);
+        avgAutoScaleLabel.setStyle("-fx-font: 16 cambria");
+        Text avgAutoSwitchLabel = new Text (avgAutoSwitchLabelX, avgAutoSwitchLabelY, "Avg. Auto Switch");
+        avgAutoSwitchLabel.setFill(Color.MEDIUMBLUE);
+        avgAutoSwitchLabel.setStyle("-fx-font: 16 cambria");
+        Text avgTeleSwitchLabel = new Text (avgTeleSwitchLabelX, avgTeleSwitchLabelY, "Avg. Tele Switch");
+        avgTeleSwitchLabel.setFill(Color.MEDIUMBLUE);
+        avgTeleSwitchLabel.setStyle("-fx-font: 16 cambria");
+        Text avgVaultLabel = new Text (avgVaultLabelX, avgVaultLabelY, "Avg Vault");
+        avgVaultLabel.setFill(Color.MEDIUMBLUE);
+        avgVaultLabel.setStyle("-fx-font: 16 cambria");
         Text avgClimbsLabel = new Text (avgClimbsLabelX, avgClimbsLabelY, "Avg Climbs");
         avgClimbsLabel.setFill(Color.MEDIUMBLUE);
         avgClimbsLabel.setStyle("-fx-font: 16 cambria");
@@ -217,10 +229,11 @@ public class Main extends Application {
         root.getChildren().add(r2Label);
         root.getChildren().add(r3Label);
         root.getChildren().add(predictedScoreLabel);
-        root.getChildren().add(avgTeleFuelLabel);
-        root.getChildren().add(avgAutoFuelLabel);
-        root.getChildren().add(avgAutoGearsLabel);
-        root.getChildren().add(avgTeleGearsLabel);
+        root.getChildren().add(avgTeleScaleLabel);
+        root.getChildren().add(avgAutoScaleLabel);
+        root.getChildren().add(avgAutoSwitchLabel);
+        root.getChildren().add(avgTeleSwitchLabel);
+        root.getChildren().add(avgVaultLabel);
         root.getChildren().add(avgClimbsLabel);
         root.getChildren().add(strongestR1);
         root.getChildren().add(strongestR2);
@@ -604,10 +617,11 @@ public class Main extends Application {
         int r2 = 0;
         int r3 = 0;
         double strength = 0.0;
-        double avgAutoFuel = 0;
-        double avgTeleFuel = 0;
-        double avgAutoGears = 0;
-        double avgTeleGears = 0;
+        double avgAutoScale = 0;
+        double avgTeleScale = 0;
+        double avgAutoSwitch = 0;
+        double avgTeleSwitch = 0;
+        double avgVault = 0;
         double avgClimbs = 0;
         // if no picked alliance members, then just use strongest alliance
         if (allianceTeamTextList.size() == 0) {
@@ -627,11 +641,12 @@ public class Main extends Application {
                     r3 = adList.get(c).robot3;
 
                     strength = adList.get(c).allianceStrength;
-                    avgAutoFuel = adList.get(c).avgAutoFuel;
-                    avgTeleFuel = adList.get(c).avgTeleFuel;
-                    avgAutoGears = adList.get(c).avgAutoGear;
-                    avgTeleGears = adList.get(c).avgTeleGear;
-                    avgClimbs = adList.get(c).avgTeleClimb;
+                    avgAutoScale = adList.get(c).avgAutoScale;
+                    avgTeleScale = adList.get(c).avgTeleScale;
+                    avgAutoSwitch = adList.get(c).avgAutoSwitch;
+                    avgTeleSwitch = adList.get(c).avgTeleSwitch;
+                    avgVault = adList.get(c).avgVault;
+                    avgClimbs = adList.get(c).avgClimbs;
                 }
                 c++;
                 if (c >= adList.size()) {
@@ -658,11 +673,12 @@ public class Main extends Application {
                         r2 = adList.get(c).robot2;
                         r3 = adList.get(c).robot3;
                         strength = adList.get(c).allianceStrength;
-                        avgAutoFuel = adList.get(c).avgAutoFuel;
-                        avgTeleFuel = adList.get(c).avgTeleFuel;
-                        avgAutoGears = adList.get(c).avgAutoGear;
-                        avgTeleGears = adList.get(c).avgTeleGear;
-                        avgClimbs = adList.get(c).avgTeleClimb;
+                        avgAutoScale = adList.get(c).avgAutoScale;
+                        avgTeleScale = adList.get(c).avgTeleScale;
+                        avgAutoSwitch = adList.get(c).avgAutoSwitch;
+                        avgTeleSwitch = adList.get(c).avgTeleSwitch;
+                        avgVault = adList.get(c).avgVault;
+                        avgClimbs = adList.get(c).avgClimbs;
                     }
                 }
                 c++;
@@ -694,11 +710,12 @@ public class Main extends Application {
                         r2 = adList.get(c).robot2;
                         r3 = adList.get(c).robot3;
                         strength = adList.get(c).allianceStrength;
-                        avgAutoFuel = adList.get(c).avgAutoFuel;
-                        avgTeleFuel = adList.get(c).avgTeleFuel;
-                        avgAutoGears = adList.get(c).avgAutoGear;
-                        avgTeleGears = adList.get(c).avgTeleGear;
-                        avgClimbs = adList.get(c).avgTeleClimb;
+                        avgAutoScale = adList.get(c).avgAutoScale;
+                        avgTeleScale = adList.get(c).avgTeleScale;
+                        avgAutoSwitch = adList.get(c).avgAutoSwitch;
+                        avgTeleSwitch = adList.get(c).avgTeleSwitch;
+                        avgVault = adList.get(c).avgVault;
+                        avgClimbs = adList.get(c).avgClimbs;
                     }
                 }
                 c++;
@@ -726,11 +743,12 @@ public class Main extends Application {
                     r2 = adList.get(c).robot2;
                     r3 = adList.get(c).robot3;
                     strength = adList.get(c).allianceStrength;
-                    avgAutoFuel = adList.get(c).avgAutoFuel;
-                    avgTeleFuel = adList.get(c).avgTeleFuel;
-                    avgAutoGears = adList.get(c).avgAutoGear;
-                    avgTeleGears = adList.get(c).avgTeleGear;
-                    avgClimbs = adList.get(c).avgTeleClimb;
+                    avgAutoScale = adList.get(c).avgAutoScale;
+                    avgTeleScale = adList.get(c).avgTeleScale;
+                    avgAutoSwitch = adList.get(c).avgAutoSwitch;
+                    avgTeleSwitch = adList.get(c).avgTeleSwitch;
+                    avgVault = adList.get(c).avgVault;
+                    avgClimbs = adList.get(c).avgClimbs;
 
                 }
                 c++;
@@ -743,10 +761,11 @@ public class Main extends Application {
         strongestR2.setText(Integer.toString(r2));
         strongestR3.setText(Integer.toString(r3));
         predictedScore.setText(String.format("%.1f",strength));
-        avgAutoFuelText.setText(String.format("%.1f",avgAutoFuel));
-        avgTeleFuelText.setText(String.format("%.1f", avgTeleFuel));
-        avgAutoGearsText.setText(String.format("%.1f", avgAutoGears));
-        avgTeleGearsText.setText(String.format("%.1f", avgTeleGears));
+        avgAutoScaleText.setText(String.format("%.1f",avgAutoScale));
+        avgTeleScaleText.setText(String.format("%.1f", avgTeleScale));
+        avgAutoSwitchText.setText(String.format("%.1f", avgAutoSwitch));
+        avgTeleSwitchText.setText(String.format("%.1f", avgTeleSwitch));
+        avgVaultText.setText(String.format("%.1f", avgVault));
         avgClimbsText.setText(String.format("%.1f", avgClimbs));
     }
 
@@ -948,28 +967,28 @@ public class Main extends Application {
             rankList.add(r);
         }
 
-        Collections.sort(rankList, new Comparator<RobotData>() {
+         Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
-                if (o1.lowShots.avg == o2.lowShots.avg)
+                if (o1.totalScale.avg == o2.totalScale.avg)
                     return 0;
-                return o1.lowShots.avg > o2.lowShots.avg ? -1 : 1;
+                return o1.totalScale.avg > o2.totalScale.avg ? -1 : 1;
             }
         });
         // now loop through the lists and set the rank based on avg score
         for (int c = 0; c < rankList.size(); c++) {
             if (c > 0) {
-                int prev_rank = getRobot(rankList.get(c-1).robotNumber).autoLowShots.rank;
-                if (getRobot(rankList.get(c).robotNumber).autoLowShots.avg < getRobot(rankList.get(c-1).robotNumber).autoLowShots.avg) {
-                    getRobot(rankList.get(c).robotNumber).autoLowShots.rank = prev_rank + 1;
+                int prev_rank = getRobot(rankList.get(c-1).robotNumber).autoScale.rank;
+                if (getRobot(rankList.get(c).robotNumber).autoScale.avg < getRobot(rankList.get(c-1).robotNumber).autoScale.avg) {
+                    getRobot(rankList.get(c).robotNumber).autoScale.rank = prev_rank + 1;
                 } else {
-                    getRobot(rankList.get(c).robotNumber).autoLowShots.rank = prev_rank;
+                    getRobot(rankList.get(c).robotNumber).autoScale.rank = prev_rank;
                 }
             } else {
-                getRobot(rankList.get(c).robotNumber).autoLowShots.rank = 1;
+                getRobot(rankList.get(c).robotNumber).autoScale.rank = 1;
             }
         }
 
-        for (int c = 0; c < rankList.size(); c++) {
+       /* for (int c = 0; c < rankList.size(); c++) {
             if (c > 0) {
                 int prev_rank = getRobot(rankList.get(c-1).robotNumber).autoHighShots.rank;
                 if (getRobot(rankList.get(c).robotNumber).autoHighShots.avg < getRobot(rankList.get(c-1).robotNumber).autoHighShots.avg) {
@@ -980,41 +999,21 @@ public class Main extends Application {
             } else {
                 getRobot(rankList.get(c).robotNumber).autoHighShots.rank = 1;
             }
-        }
+        } */
 
         for (int c = 0; c < rankList.size(); c++) {
             if (c > 0) {
-                int prev_rank = getRobot(rankList.get(c-1).robotNumber).lowShots.rank;
-                if (getRobot(rankList.get(c).robotNumber).lowShots.avg < getRobot(rankList.get(c-1).robotNumber).lowShots.avg) {
-                    getRobot(rankList.get(c).robotNumber).lowShots.rank = prev_rank + 1;
+                int prev_rank = getRobot(rankList.get(c-1).robotNumber).totalScale.rank;
+                if (getRobot(rankList.get(c).robotNumber).totalScale.avg < getRobot(rankList.get(c-1).robotNumber).totalScale.avg) {
+                    getRobot(rankList.get(c).robotNumber).totalScale.rank = prev_rank + 1;
                 } else {
-                    getRobot(rankList.get(c).robotNumber).lowShots.rank = prev_rank;
+                    getRobot(rankList.get(c).robotNumber).totalScale.rank = prev_rank;
                 }
             } else {
-                getRobot(rankList.get(c).robotNumber).lowShots.rank = 1;
+                getRobot(rankList.get(c).robotNumber).totalScale.rank = 1;
             }
         }
 
-        Collections.sort(rankList, new Comparator<RobotData>() {
-            public int compare(RobotData o1, RobotData o2) {
-                if (o1.highAttempt.avg == o2.highAttempt.avg)
-                    return 0;
-                return o1.highAttempt.avg > o2.highAttempt.avg ? -1 : 1;
-            }
-        });
-        // now loop through the lists and set the rank based on avg score
-        for (int c = 0; c < rankList.size(); c++) {
-            if (c > 0) {
-                int prev_rank = getRobot(rankList.get(c-1).robotNumber).highAttempt.rank;
-                if (getRobot(rankList.get(c).robotNumber).highAttempt.avg < getRobot(rankList.get(c-1).robotNumber).highAttempt.avg) {
-                    getRobot(rankList.get(c).robotNumber).highAttempt.rank = prev_rank + 1;
-                } else {
-                    getRobot(rankList.get(c).robotNumber).highAttempt.rank = prev_rank;
-                }
-            } else {
-                getRobot(rankList.get(c).robotNumber).highAttempt.rank = 1;
-            }
-        }
         Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
                 if (o1.autoCross.avg == o2.autoCross.avg)
@@ -1041,45 +1040,64 @@ public class Main extends Application {
 
         Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
-                if (o1.autoGears.avg == o2.autoGears.avg)
+                if (o1.autoSwitch.avg == o2.autoSwitch.avg)
                     return 0;
-                return o1.autoGears.avg > o2.autoGears.avg ? -1 : 1;
+                return o1.autoSwitch.avg > o2.autoSwitch.avg ? -1 : 1;
             }
         });
         // now loop through the lists and set the rank based on avg score
         for (int c = 0; c < rankList.size(); c++) {
             if (c > 0) {
-                int prev_rank = getRobot(rankList.get(c-1).robotNumber).autoGears.rank;
-                if (getRobot(rankList.get(c).robotNumber).autoGears.avg < getRobot(rankList.get(c-1).robotNumber).autoGears.avg) {
-                    getRobot(rankList.get(c).robotNumber).autoGears.rank = prev_rank + 1;
+                int prev_rank = getRobot(rankList.get(c-1).robotNumber).autoSwitch.rank;
+                if (getRobot(rankList.get(c).robotNumber).autoSwitch.avg < getRobot(rankList.get(c-1).robotNumber).autoSwitch.avg) {
+                    getRobot(rankList.get(c).robotNumber).autoSwitch.rank = prev_rank + 1;
                 } else {
-                    getRobot(rankList.get(c).robotNumber).autoGears.rank = prev_rank;
+                    getRobot(rankList.get(c).robotNumber).autoSwitch.rank = prev_rank;
                 }
             } else {
-                getRobot(rankList.get(c).robotNumber).autoGears.rank = 1;
+                getRobot(rankList.get(c).robotNumber).autoSwitch.rank = 1;
             }
         }
         Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
-                if (o1.gears.avg == o2.gears.avg)
+                if (o1.totalSwitch.avg == o2.totalSwitch.avg)
                     return 0;
-                return o1.gears.avg > o2.gears.avg ? -1 : 1;
+                return o1.totalSwitch.avg > o2.totalSwitch.avg ? -1 : 1;
             }
         });
         // now loop through the lists and set the rank based on avg score
         for (int c = 0; c < rankList.size(); c++) {
             if (c > 0) {
-                int prev_rank = getRobot(rankList.get(c-1).robotNumber).gears.rank;
-                if (getRobot(rankList.get(c).robotNumber).gears.avg < getRobot(rankList.get(c-1).robotNumber).gears.avg) {
-                    getRobot(rankList.get(c).robotNumber).gears.rank = prev_rank + 1;
+                int prev_rank = getRobot(rankList.get(c-1).robotNumber).totalSwitch.rank;
+                if (getRobot(rankList.get(c).robotNumber).totalSwitch.avg < getRobot(rankList.get(c-1).robotNumber).totalSwitch.avg) {
+                    getRobot(rankList.get(c).robotNumber).totalSwitch.rank = prev_rank + 1;
                 } else {
-                    getRobot(rankList.get(c).robotNumber).gears.rank = prev_rank;
+                    getRobot(rankList.get(c).robotNumber).totalSwitch.rank = prev_rank;
                 }
             } else {
-                getRobot(rankList.get(c).robotNumber).gears.rank = 1;
+                getRobot(rankList.get(c).robotNumber).totalSwitch.rank = 1;
             }
         }
-
+        Collections.sort(rankList, new Comparator<RobotData>() {
+            public int compare(RobotData o1, RobotData o2) {
+                if (o1.vault.avg == o2.vault.avg)
+                    return 0;
+                return o1.vault.avg > o2.vault.avg ? -1 : 1;
+            }
+        });
+        // now loop through the lists and set the rank based on avg score
+        for (int c = 0; c < rankList.size(); c++) {
+            if (c > 0) {
+                int prev_rank = getRobot(rankList.get(c - 1).robotNumber).vault.rank;
+                if (getRobot(rankList.get(c).robotNumber).vault.avg < getRobot(rankList.get(c - 1).robotNumber).vault.avg) {
+                    getRobot(rankList.get(c).robotNumber).vault.rank = prev_rank + 1;
+                } else {
+                    getRobot(rankList.get(c).robotNumber).vault.rank = prev_rank;
+                }
+            } else {
+                getRobot(rankList.get(c).robotNumber).vault.rank = 1;
+            }
+        }
         Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
                 if (o1.climb.avg == o2.climb.avg)
@@ -1100,7 +1118,7 @@ public class Main extends Application {
                 getRobot(rankList.get(c).robotNumber).climb.rank = 1;
             }
         }
-        Collections.sort(rankList, new Comparator<RobotData>() {
+         /* Collections.sort(rankList, new Comparator<RobotData>() {
             public int compare(RobotData o1, RobotData o2) {
                 if (o1.accuracy == o2.accuracy)
                     return 0;
@@ -1110,7 +1128,7 @@ public class Main extends Application {
         // now loop through the lists and set the rank based on avg score
         for (int c = 0; c < rankList.size(); c++) {
             getRobot(rankList.get(c).robotNumber).accuracyRank = c + 1;
-        }
+        } */
     }
 
     public void getDataFromDB() {
@@ -1170,16 +1188,16 @@ public class Main extends Application {
                 int rn = rs.getInt("RobotNumber");
                 if (haveRobot(rn)) {
                     String gameEvent = rs.getString("gameEvent");
-                    if (gameEvent.equals("crossBaselineAuto")){getRobot(rn).autoCross.total++;}
+                    if (gameEvent.equals("crossedBaseline")){getRobot(rn).autoCross.total++;}
                     if (gameEvent.equals("climbed")){getRobot(rn).climb.total++;}
-                    if (gameEvent.equals("gearPlacedAuto")){getRobot(rn).autoGears.total++;}
-                    if (gameEvent.equals("gearPlacedTeleop")){getRobot(rn).teleGears.total++;}
-                    if (gameEvent.equals("lowGoal")){getRobot(rn).lowShots.total++;}
-                    if (gameEvent.equals("highGoal")){getRobot(rn).highAttempt.total++;}
-                    if (gameEvent.equals("lowGoalAuto")){getRobot(rn).autoLowShots.total++;}
-                    if (gameEvent.equals("highGoalAuto")){getRobot(rn).autoHighShots.total++;}
-                    if (gameEvent.equals("gearPlacedTeleop") || gameEvent.equals("gearPlacedAuto")){getRobot(rn).gears.total++;}
-
+                    if (gameEvent.equals("autoAllianceSwitch")){getRobot(rn).autoSwitch.total++;}
+                    if (gameEvent.equals("teleopAllianceSwitch")){getRobot(rn).teleSwitch.total++;}
+                    if (gameEvent.equals("teleopScale")){getRobot(rn).teleScale.total++;}
+                    //if (gameEvent.equals("highGoal")){getRobot(rn).highAttempt.total++;}
+                    if (gameEvent.equals("autoScale")){getRobot(rn).autoScale.total++;}
+                    if (gameEvent.equals("vault")){getRobot(rn).vault.total++;}
+                    if (gameEvent.equals("autoAllianceSwitch") || gameEvent.equals("teleopAllianceSwitch")){getRobot(rn).totalSwitch.total++;}
+                    if (gameEvent.equals("autoScale") || gameEvent.equals("teleopScale")){getRobot(rn).totalScale.total++;}
                 }
             }
             rs.close();
@@ -1187,15 +1205,17 @@ public class Main extends Application {
 
             //averages
             for (RobotData r : robotList) {
-                r.autoLowShots.avg = (double) r.autoLowShots.total / r.matches;
-                r.autoHighShots.avg = (double) r.autoHighShots.total / r.matches;
+                r.autoScale.avg = (double) r.autoScale.total / r.matches;
+                //r.autoHighShots.avg = (double) r.autoHighShots.total / r.matches;
                 r.autoCross.avg = (double) r.autoCross.total / r.matches;
-                r.autoGears.avg = (double) r.autoGears.total / r.matches;
-                r.teleGears.avg = (double) r.teleGears.total / r.matches;
+                r.autoSwitch.avg = (double) r.autoSwitch.total / r.matches;
+                r.teleSwitch.avg = (double) r.teleSwitch.total / r.matches;
+                r.vault.avg = (double) r.vault.total / r.matches;
                 r.climb.avg = (double) r.climb.total / r.matches;
-                r.gears.avg = (double) r.gears.total / r.matches;
-                r.highAttempt.avg = (double) r.highAttempt.total / r.matches;
-                r.lowShots.avg = (double) r.lowShots.total / r.matches;
+                r.totalSwitch.avg = (double) r.totalSwitch.total / r.matches;
+                r.totalScale.avg = (double) r.totalScale.total / r.matches;
+                r.autoScale.avg = (double) r.autoScale.total / r.matches;
+                r.teleScale.avg = (double) r.teleScale.total / r.matches;
             }
 
         } catch (SQLException e) {
@@ -1223,13 +1243,12 @@ public class Main extends Application {
 
                         // create the combined averages
                         // in auto low shots are worth 1/3 point, high shots = 1pt
-                        ad.avgAutoFuel = (getRobot(t1).autoLowShots.avg + getRobot(t2).autoLowShots.avg + getRobot(t3).autoLowShots.avg) / 3 +
-                                (getRobot(t1).autoHighShots.avg + getRobot(t2).autoHighShots.avg + getRobot(t3).autoHighShots.avg);
-                        ad.avgTeleFuel = (getRobot(t1).lowShots.avg + getRobot(t2).lowShots.avg + getRobot(t3).lowShots.avg) / 9 +
-                                (getRobot(t1).autoHighShots.avg + getRobot(t2).autoHighShots.avg + getRobot(t3).autoHighShots.avg) / 3;
-                        ad.avgAutoGear = getRobot(t1).autoGears.avg + getRobot(t2).autoGears.avg + getRobot(t3).autoGears.avg;
-                        ad.avgTeleGear = getRobot(t1).teleGears.avg + getRobot(t2).teleGears.avg + getRobot(t3).teleGears.avg;
-                        ad.avgTeleClimb = getRobot(t1).climb.avg + getRobot(t2).climb.avg + getRobot(t3).climb.avg;
+                        ad.avgAutoScale = (getRobot(t1).autoScale.avg + getRobot(t2).autoScale.avg + getRobot(t3).autoScale.avg) / 3;
+                        ad.avgTeleScale = (getRobot(t1).teleScale.avg + getRobot(t2).teleScale.avg + getRobot(t3).teleScale.avg) / 9;
+                        ad.avgAutoSwitch = getRobot(t1).autoSwitch.avg + getRobot(t2).autoSwitch.avg + getRobot(t3).autoSwitch.avg;
+                        ad.avgTeleSwitch = getRobot(t1).teleSwitch.avg + getRobot(t2).teleSwitch.avg + getRobot(t3).teleSwitch.avg;
+                        ad.avgVault = getRobot(t1).vault.avg + getRobot(t2).vault.avg + getRobot(t3).vault.avg;
+                        ad.avgClimbs = getRobot(t1).climb.avg + getRobot(t2).climb.avg + getRobot(t3).climb.avg;
 
                         ad.calcStrength();
                         adList.add(ad);
