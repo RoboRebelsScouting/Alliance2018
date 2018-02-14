@@ -23,9 +23,9 @@ public class AllianceData {
     public void calcStrength() {
         double strength = 0.0;
 
-        strength += avgAutoScale;
+        strength += (int) (avgAutoScale) * 2;
         strength += avgTeleScale;
-        strength += avgAutoSwitch;
+        strength += (int) (avgAutoSwitch) * 2;
         strength += avgTeleSwitch;
         int vaultPoints = (int)(avgVault) * 5;
         strength += vaultPoints;
