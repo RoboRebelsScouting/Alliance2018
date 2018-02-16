@@ -1149,7 +1149,7 @@ public class Main extends Application {
         System.out.println("Getting Data from SQL Database");
 
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/roborebels", "root", "roborebels1153");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/roborebels", "root", "1153");
             Statement stmt;
             ResultSet rs;
 
@@ -1188,12 +1188,11 @@ public class Main extends Application {
                 int rn = rs.getInt("RobotNumber");
                 if (haveRobot(rn)) {
                     String gameEvent = rs.getString("gameEvent");
-                    if (gameEvent.equals("crossedBaseline")){getRobot(rn).autoCross.total++;}
-                    if (gameEvent.equals("climbed")){getRobot(rn).climb.total++;}
+                    if (gameEvent.equals("crossBaseline")){getRobot(rn).autoCross.total++;}
+                    if (gameEvent.equals("climb")){getRobot(rn).climb.total++;}
                     if (gameEvent.equals("autoAllianceSwitch")){getRobot(rn).autoSwitch.total++;}
                     if (gameEvent.equals("teleopAllianceSwitch")){getRobot(rn).teleSwitch.total++;}
                     if (gameEvent.equals("teleopScale")){getRobot(rn).teleScale.total++;}
-                    //if (gameEvent.equals("highGoal")){getRobot(rn).highAttempt.total++;}
                     if (gameEvent.equals("autoScale")){getRobot(rn).autoScale.total++;}
                     if (gameEvent.equals("vault")){getRobot(rn).vault.total++;}
                     if (gameEvent.equals("autoAllianceSwitch") || gameEvent.equals("teleopAllianceSwitch")){getRobot(rn).totalSwitch.total++;}
